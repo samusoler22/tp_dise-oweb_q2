@@ -12,29 +12,59 @@
 </head>
 <body>
     <header class="flex-row">
-        <img src="/src/Logo.png" alt="S & D Company Logo">
+        <img src="src/Logo.png" alt="S & D Company Logo">
     </header>
     <nav>
         <ul class="flex-row">
             <li><a class="nav_links" href="">HOME</a></li>
             <li><a class="nav_links" href="">WOMEN</a></li>
             <li><a class="nav_links" href="">MEN</a></li>
-            <li><a class="nav_links" href="">ACCESORIES</a></li>
+            <li><a class="nav_links" href="">KIDS</a></li>
             <li><a class="nav_links" href="">SALES</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="banner flex-column">
-            <h1>THE ART OF ELEGANCE</h1>
-            <p>Unveiling exclusive collection</p>
-            <button>DISCOVER NOW</button>
+            <h1 id="title">THE ART OF ELEGANCE</h1>
+            <p id="subtitle">Unveiling exclusive collection</p>
+            <button id="discover-now">DISCOVER NOW</button>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div id="women-item" class="carousel-item">
+                    Women
+                </div>
+                <div id="men-item" class="carousel-item">
+                    Men
+                </div>
+                <div id="kids-item" class="carousel-item">
+                    Kids
+                </div>
+                <div id="exclusive-item" class="carousel-item">
+                    Exclusive
+                </div>
+                <div id="sales-item" class="carousel-item">
+                    Sales
+                </div>
+                <div id="jewelry-item" class="carousel-item">
+                    Jewelry
+                </div>
+            </div>
+        </div>
+        <div class="flex-row">
+            <button class="nav-arrow previous">❮</button>
+            <button class="nav-arrow next">❯</button>
         </div>
 
     </main>
 
+
+
     <footer>
 
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>

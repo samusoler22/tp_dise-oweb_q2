@@ -59,10 +59,129 @@ nav ul{
 }
 
 .banner{
-    height: 65%;
+    gap: 5%;
+    height: 63vh;
+    margin: 2%;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    margin: 1%;
     background-image: url('../src/Banner.jpg');
     background-size: cover;
+    background-color: #013220;
+    border-radius: 10px;
 }
+
+#title{
+    color: whitesmoke;
+    font-size: 55px;
+    text-shadow: 2px 2px 4px black;
+}
+
+#subtitle{
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+#discover-now{
+    color: whitesmoke;
+    font-size: 15px;
+    border: solid whitesmoke 2px;
+    padding: 1%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease-in-out;
+}
+
+#discover-now:hover{
+    background-color: rgba(255, 221, 0, 0.5);
+    transform: scale(1.1);
+}
+
+#kids-item{
+   background-image: url('../src/kids.jpg'); 
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+#women-item{
+   background-image: url('../src/women.jpg'); 
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+#men-item{
+   background-image: url('../src/men.jpg'); 
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+#exclusive-item{
+   background-image: url('../src/exclusive.jpg'); 
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+#sales-item{
+   background-image: url('../src/sales.jpg'); 
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+#jewelry-item{
+   background-image: url('../src/jewelry.jpg'); 
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+/* Carousel */
+.carousel-container {
+    border-top: solid 2px #013220;
+    border-bottom: solid 2px #013220;
+    width: 98.7vw;
+    height: 20vh;
+    overflow: hidden; 
+}
+
+.carousel-track {
+    display: flex;
+    height: 20vh;
+    /* *** CRITICAL: Set the width precisely using calc() ***
+    Total items (6) / Visible items (3) = 2. 
+    So, the track must be 200% wide. Let's use calc() for robustness.
+    */
+    width: 200vw;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+    box-sizing: border-box;
+    padding: 1%;
+    min-height: 50%;
+    min-width: 16.6%; 
+    flex-shrink: 0; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+.nav-arrow{
+    width: 15%;
+    justify-content: center;
+    background-color: #013220;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.nav-arrow:hover{
+    background-color: rgba(1, 50, 32, 0.5);
+}
+
+.nav-arrow:disabled {
+    background-color: rgba(1, 50, 32, 0.5);
+    cursor: not-allowed;
+}
+
