@@ -62,18 +62,29 @@
 
             </div>
         </section>
-
-        <section id="form">
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
+        <div id="contact" class="flex-row">
+            <aside class="flex-column">
+                <h3>Brand</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fuga nam officia explicabo corrupti rem, mollitia iusto facere commodi officiis delectus sequi dolorum minus? Sapiente quae, molestias vero ad exercitationem corrupti similique optio. Itaque voluptatem, dolorum deserunt alias reiciendis blanditiis tempora fugiat tempore delectus quos commodi cupiditate eum ipsam voluptates sunt quod dicta optio, amet officiis expedita ullam nisi! Ipsum labore voluptates odit, eius ipsam asperiores tempore earum. Omnis a unde quod voluptatem cum? Natus eum iste repellendus itaque voluptates deserunt saepe mollitia maiores laboriosam autem reprehenderit totam, illum quia odit nihil magnam fuga id voluptatum inventore vel ipsam blanditiis.</p>
+            </aside>
+            <section id="form">
+                <form class="flex-row">
+                    <div class="flex-column">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="flex-column">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Send</button>
+                    </div>
+                    
+                </form>
+            </section>
+        </div>
+        
     </main>
     <footer>
         <div class="flex-column">

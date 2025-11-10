@@ -23,16 +23,6 @@ async function createClothes(gender){
     });
 }
 
-function loadClothes(gender) {
-    ClothesByGender(gender)
-        .then(clothesArray => {
-            createClothes(clothesArray);
-        })
-        .catch(error => {
-            console.error(`Error cargando data ${gender} clothes:`, error);
-            clothesContainer.innerHTML = "<p>Hubo un error mostrando los datos, no podemos mostrarlo en este momento</p>";
-        });
-}
 
 function updateCarousel(arrow) {
     if (arrow === 'next') {
@@ -46,6 +36,13 @@ function updateCarousel(arrow) {
     prevButton.disabled = currentIndex === 0;
     nextButton.disabled = currentIndex === maxIndex;
 }
+
+
+
+//on page load event
+window.addEventListener('DOMContentLoaded', () => {
+    createClothes('Mujer');
+});
 
 //Carousel
 const track = document.querySelector('.carousel-track');
