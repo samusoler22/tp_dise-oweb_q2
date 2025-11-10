@@ -1,24 +1,38 @@
-function ClothesByGender(gender){
-    clothesData = fetch(`https://eneqomi2sj.execute-api.us-east-2.amazonaws.com/Prod/products/gender/${gender}`)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.log(error);
-    })
-    
-    return clothesData;
+async function ClothesByGender(gender){
+    let clothesData = await fetch(`https://eneqomi2sj.execute-api.us-east-2.amazonaws.com/Prod/products/gender/${gender}`)
+    clothes = await clothesData.json();
+    console.log(clothes);
+    return clothes;
 }
 
-const track = document.querySelector('.carousel-track');
-const nextButton = document.querySelector('.next');
-const prevButton = document.querySelector('.previous');
-const totalItems = 6;
-const itemsVisible = 3;
-let currentIndex = 0;
-let offset = 0;
-const maxIndex = totalItems - itemsVisible;
+async function createClothes(gender){ 
+    clothesContainer.innerHTML = "";
+    let clothes = await ClothesByGender(gender); 
+    
+    clothes.forEach(cloth => {
+        let clothElement = document.createElement('article');
+        clothElement.classList.add('cloth');
+        clothElement.innerHTML = `
+            <figure>
+                <img src="${cloth.URL}" alt="${cloth.NAME}">
+            </figure>
+            <h3>${cloth.NAME}</h3>
+            <p>AR$: ${cloth.PRICE}</p>
+        `;
+        clothesContainer.appendChild(clothElement);
+    });
+}
+
+function loadClothes(gender) {
+    ClothesByGender(gender)
+        .then(clothesArray => {
+            createClothes(clothesArray);
+        })
+        .catch(error => {
+            console.error(`Error cargando data ${gender} clothes:`, error);
+            clothesContainer.innerHTML = "<p>Hubo un error mostrando los datos, no podemos mostrarlo en este momento</p>";
+        });
+}
 
 function updateCarousel(arrow) {
     if (arrow === 'next') {
@@ -33,6 +47,16 @@ function updateCarousel(arrow) {
     nextButton.disabled = currentIndex === maxIndex;
 }
 
+//Carousel
+const track = document.querySelector('.carousel-track');
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.previous');
+const totalItems = 5;
+const itemsVisible = 3;
+let currentIndex = 0;
+let offset = 0;
+const maxIndex = totalItems - itemsVisible;
+
 nextButton.addEventListener('click', () => {
     if (currentIndex < maxIndex) {
         currentIndex++;
@@ -46,3 +70,15 @@ prevButton.addEventListener('click', () => {
         updateCarousel('');
     }
 });
+
+let carouselItems = document.querySelectorAll('.carousel-item');
+let clothesContainer = document.getElementsByClassName("clothes-container")[0];
+let clothesTitle = document.getElementById("shop").firstElementChild;
+carouselItems.forEach(item => {
+    item.addEventListener('click', (event) => {
+        event.preventDefault();
+        clothesTitle.innerHTML = item.innerHTML;
+        createClothes(item.getAttribute('alt'));
+    });
+});
+

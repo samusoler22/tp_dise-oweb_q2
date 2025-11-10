@@ -98,57 +98,42 @@ nav ul{
 }
 
 #kids-item{
-   background-image: url('../src/kids.jpg'); 
-   background-size: cover;
-   background-repeat: no-repeat;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/kids.jpg'); 
 }
 
 #women-item{
-   background-image: url('../src/women.jpg'); 
-   background-size: cover;
-   background-repeat: no-repeat;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/women.jpg'); 
 }
 
 #men-item{
-   background-image: url('../src/men.jpg'); 
-   background-size: cover;
-   background-repeat: no-repeat;
-}
-
-#exclusive-item{
-   background-image: url('../src/exclusive.jpg'); 
-   background-size: cover;
-   background-repeat: no-repeat;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/men.jpg'); 
 }
 
 #sales-item{
-   background-image: url('../src/sales.jpg'); 
-   background-size: cover;
-   background-repeat: no-repeat;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/sales.jpg'); 
 }
 
 #jewelry-item{
-   background-image: url('../src/jewelry.jpg'); 
-   background-size: cover;
-   background-repeat: no-repeat;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/joyas2.jpg'); 
 }
 
 /* Carousel */
+.carousel{
+    position: sticky;
+    top: 0;
+}
+
 .carousel-container {
     border-top: solid 2px #013220;
     border-bottom: solid 2px #013220;
     width: 98.7vw;
     height: 20vh;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .carousel-track {
     display: flex;
     height: 20vh;
-    /* *** CRITICAL: Set the width precisely using calc() ***
-    Total items (6) / Visible items (3) = 2. 
-    So, the track must be 200% wide. Let's use calc() for robustness.
-    */
     width: 200vw;
     transition: transform 0.3s ease-in-out;
 }
@@ -163,7 +148,10 @@ nav ul{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: whitesmoke;
+    background-size: cover;
+   background-repeat: no-repeat;
+   font-size: 50px;
+   color: whitesmoke;   
 }
 .nav-arrow{
     width: 15%;
@@ -171,7 +159,7 @@ nav ul{
     background-color: #013220;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 4px;
     cursor: pointer;
     margin: auto;
 }
@@ -185,3 +173,58 @@ nav ul{
     cursor: not-allowed;
 }
 
+.clothes-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    background-color: #013220;
+    padding-top: 1%;
+}
+
+#shop h2{
+    text-align: center;
+    border-bottom: solid 2px #013220;
+    border-top: solid 2px #013220;
+    padding: 1%;
+    margin-top: 1%;
+}
+
+.cloth{
+    width: 20%;
+    height: 20%;
+    border: solid 2px #013220;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+    background-color: #fff;
+}
+
+.cloth figure{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+
+.cloth figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cloth h3{
+    font-size: 15px;
+    margin: 1%;
+}
+
+.cloth p{
+    font-size: 12px;
+    margin: 1%;
+}
