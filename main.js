@@ -75,7 +75,50 @@ carouselItems.forEach(item => {
     item.addEventListener('click', (event) => {
         event.preventDefault();
         clothesTitle.innerHTML = item.innerHTML;
-        createClothes(item.getAttribute('alt'));
+        createClothes(item.dataset.category);
     });
 });
 
+
+let form = document.querySelector('form');
+let nameInput = document.getElementById('nombre');
+let emailInput = document.getElementById('email');
+let messageInput = document.getElementById('mensaje');
+
+function errorElement(parentElement, message){
+    let errorElement = document.createElement('p');
+    errorElement.id = 'error';
+    errorElement.textContent = message;
+    parentElement.appendChild(errorElement);
+}
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  let nameValue = nameInput.value.trim();
+  let emailValue = emailInput.value.trim();
+  let messageValue = messageInput.value.trim();
+
+  if (nameValue === '') {
+    errorElement(form, 'Por favor ingresa tu nombre');
+    return;
+  }
+
+  if (emailValue === '') {
+    errorElement(form, 'Por favor ingresa tu correo electrónico');
+    return;
+  }
+
+  if (!emailValue.includes('@') || !emailValue.includes('.')) {
+    errorElement(form, 'Por favor ingresa un correo electrónico válido');
+    return;
+  }
+
+  if (messageValue === '') {
+    errorElement(form, 'Por favor ingresa un mensaje');
+    return;
+  }
+
+  alert('Formulario enviado con exito!');
+  form.reset();
+});
