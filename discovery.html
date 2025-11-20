@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos</title>
+  <link rel="stylesheet" href="estilospro.css">
+</head>
+<body>
+  <h1>Todos los Productos</h1>
+
+  <div class="producto">
+    <img src="bolso.jpg" alt="">
+    <div class="info">
+      <h3>Bolso Reveur</h3>
+      <p class="precio">25000</p>
+      <button onclick="agregarAlCarrito('Bolso Reveur', 25000)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="carrito"></div>
+  <p id="total"></p>
+  <button onclick="vaciarCarrito()" class="btn-vaciar">Vaciar carrito</button>
+
+  <script src="carrito.js"></script>
+</body>
+</html>

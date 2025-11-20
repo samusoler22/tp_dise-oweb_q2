@@ -36,6 +36,11 @@
             <h1 id="title">THE ART OF ELEGANCE</h1>
             <p id="subtitle">Unveiling exclusive collection</p>
             <button id="discover-now">DISCOVER NOW</button>
+            <script>
+                document.getElementById('discover-now').addEventListener('click', function() {
+                location.href = 'discovery.html'; // Redirige a la pagina de productos
+                });
+            </script>
         </div>
         <div class="carousel">
             <div class="carousel-container">
@@ -73,7 +78,6 @@
                     #Aca creamos los elementos de cada pieza de ropa
                 </div>
             </section>
-
             <section id="video" class="flex-row">
                 <video class="splited_section" src="src/brand_video.mp4" loop autoplay muted></video>
                 <aside class="flex-column splited_section splited_section_text">
@@ -106,11 +110,37 @@
                 </div>
             </section>
         </div>
+
     </main>
-    <footer class="flex-column">
-        <p>&copy; 2023 ArtofElegance, All rights reserved.</p>
-        <p>Contact us: <a href="mailto:info@artofelegance.com">info@artofelegance.com</a></p>
+        <footer class="lp-footer">
+
+  <div class="lp-top-line"></div>
+
+  <div class="lp-container">
+
+    <div class="lp-left">
+      <span class="lp-icon">🌐</span>
+      <span>INTL (English)</span>
+    </div>
+
+    <div class="lp-center">
+      <img src="logo.png" alt="Reveur Logo" class="lp-logo">
+      <h2>Reveur</h2>
+      <p>Reveur Boutique 2025</p>
+    </div>
+
+    <div class="lp-right">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
+    </div>
+
+  </div>
+
+</footer>
+
     </footer>
     <script src="main.js"></script>
 </body>
 </html>
+

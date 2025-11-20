@@ -317,13 +317,13 @@ form button{
     padding: 1%;
     border: solid 1px #f47e07;
     border-radius: 5px;
-    background-color: rgba(255, 221, 0, 0.5);
+    background-color: rgb(255, 167, 16);
     color: #15202b;
     cursor: pointer;
 }
 
 form button:hover{
-    background-color: rgba(255, 221, 0, 0.5);
+    background-color: rgb(255, 95, 2);
 }
 
 footer{
@@ -339,3 +339,187 @@ footer{
 footer p{
     margin: 0;
 }
+
+.lp-footer {
+  background-color: #faf7f2;
+  padding: 0;
+  width: 100%;
+  color: #b36a56;
+  font-family: "Georgia", serif;
+}
+
+.lp-top-line {
+  width: 100%;
+  height: 30px; 
+  background-color: #ff8800;
+}
+
+
+.lp-container {
+  max-width: 1600px; 
+  margin: auto;
+  padding: 40px 50px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  align-items: center;
+}
+
+.lp-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+
+.lp-center {
+  text-align: center;
+}
+
+.lp-logo {
+  height: 40px;
+  margin-bottom: 5px;
+  opacity: 0.9;
+}
+
+.lp-center h2 {
+  font-size: 26px;
+  font-weight: normal;
+  margin: 5px 0;
+  color: #b36a56;
+}
+
+.lp-center p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
+.lp-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+}
+
+.lp-right a {
+  text-decoration: none;
+  color: #b36a56;
+  font-size: 16px;
+}
+
+
+.producto {
+  border: 1px solid #eee;
+  padding: 15px;
+  width: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Georgia", serif;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #b36a56;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: "Georgia", serif;
+}
+
+button:hover {
+  background: #9a5948;
+}
+
+#carrito {
+  margin-top: 20px;
+  font-family: "Georgia", serif;
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.btn-vaciar {
+  background: black;
+  margin-top: 20px;
+}
+
+/* Contenedor de productos */
+.producto {
+  display: flex;             
+  align-items: center;      
+  justify-content: space-between;
+  background-color: #fff3e0; 
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 100%;            
+}
+
+
+.producto img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s; 
+}
+
+
+.producto img:hover {
+  transform: translateY(-10px); 
+}
+
+.producto h3, .producto .precio {
+  margin: 0;
+}
+
+/* Botón */
+.producto button {
+  padding: 10px 20px;
+  background-color: #FFA500; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.producto button:hover {
+  background-color: #ff8c00; 
+}
+
+/* Carrito */
+#carrito {
+  background-color: #fff3e0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+#total {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Bot vaciar carrito */
+.btn-vaciar {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #c66012; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
