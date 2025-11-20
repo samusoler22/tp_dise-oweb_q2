@@ -122,8 +122,8 @@ nav ul{
 }
 
 .carousel-container {
-    border-top: solid 2px #ffffff;
-    border-bottom: solid 2px #ffffff;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
     width: 98.7vw;
     height: 15vh;
     overflow: hidden;
@@ -160,7 +160,10 @@ nav ul{
     padding: 4px;
     cursor: pointer;
     margin: auto;
-    border: solid 1px white;
+    border-top: none;
+    border-right: solid 2px black;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 
@@ -185,7 +188,6 @@ nav ul{
 
 #shop h2{
     font-size: 42px;
-    color: white;
     text-align: center;
     border-bottom: solid 2px white;
     border-top: solid 2px white;
