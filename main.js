@@ -132,3 +132,28 @@ form.addEventListener('submit', (event) => {
   alert('FORMULARIO ENVIADO CON EXITO!');
   form.reset();
 });
+
+
+nameInput.addEventListener('input', () => {
+  localStorage.setItem('name', nameInput.value);
+});
+
+emailInput.addEventListener('input', () => {
+  localStorage.setItem('email', emailInput.value);
+});
+
+messageInput.addEventListener('input', () => {
+  localStorage.setItem('message', messageInput.value);
+});
+
+form.addEventListener('submit', () => {
+  localStorage.removeItem('name');
+  localStorage.removeItem('email');
+  localStorage.removeItem('message');
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  nameInput.value = localStorage.getItem('name') || '';
+  emailInput.value = localStorage.getItem('email') || '';
+  messageInput.value = localStorage.getItem('message') || '';
+});
