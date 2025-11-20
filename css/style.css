@@ -65,9 +65,7 @@ nav ul{
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    background-image: url('../src/Banner.jpg');
-    background-size: cover;
-    background-color: #ff9634;
+    background: linear-gradient(135deg, #FF9634 0%, #2C2F4A 100%);
     border-radius: 10px;
 }
 
@@ -156,7 +154,7 @@ nav ul{
 .nav-arrow{
     width: 15%;
     justify-content: center;
-    background-color: #f47e07;
+    background: linear-gradient(135deg, #FF9634 0%, #FF6A00 100%);
     color: white;
     border: none;
     padding: 4px;
@@ -169,11 +167,10 @@ nav ul{
 }
 
 .nav-arrow:hover{
-    background-color: rgba(255, 57, 2, 0.5);
+    background: linear-gradient(135deg, #FF6A00 0%, #E85A00 100%);
 }
 
 .nav-arrow:disabled {
-    background-color: rgba(255, 85, 0, 0.5);
     cursor: not-allowed;
 }
 
@@ -183,16 +180,15 @@ nav ul{
     justify-content: center;
     align-items: center;
     gap: 8%;
-    background-color: #f1f1f1;
     padding-top: 1%;
 }
 
 #shop h2{
     font-size: 42px;
-    color: #f47e07;
+    color: white;
     text-align: center;
-    border-bottom: solid 2px #f47e07;
-    border-top: solid 2px #f47e07;
+    border-bottom: solid 2px white;
+    border-top: solid 2px white;
     padding: 1%;
     margin: 1% 0;
 }
@@ -256,7 +252,7 @@ section{
     margin: 2%;
     padding: 5%;
     border-radius: 20px;
-    background-color: #f47e07;
+    background: linear-gradient(135deg, #FF9634 0%, #2C2F4A 100%);
 }
 
 #contact, #video{
