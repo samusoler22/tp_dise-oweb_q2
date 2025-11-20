@@ -523,28 +523,92 @@ button:hover {
   cursor: pointer;
 }
 
-
-/*ajustador pantalla*/
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  margin: 0;
-  padding: 20px;
-}
-
-
+/* como se ve dispositivos */
 @media (max-width: 768px) {
-  body {
-    padding: 10px;
-    font-size: 14px;
-  }
 
- 
-  h1 {
-    font-size: 24px;
-  }
+    /* Secciones divididas  */
+    #video,
+    #contact {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
 
-  p {
-    font-size: 14px;
-  }
+    .splited_section {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Banner */
+    .banner {
+        height: 40vh;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #title {
+        font-size: 32px;
+    }
+
+    #subtitle {
+        font-size: 18px;
+    }
+
+    /* Formulario */
+    form {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .special_gap {
+        gap: 20px;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+    }
+
+    /* Productos (ropa) */
+    .cloth {
+        width: 45%;
+        height: auto;
+    }
+
+    /* Footer */
+    .lp-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .lp-right {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .lp-left {
+        justify-content: center;
+    }
+
+    /* orden de secciones */
+    .sections_container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    #shop {
+        order: 1;
+    }
+
+    #video {
+        order: 2;           /* video  y texto */
+        flex-direction: column;
+    }
+
+    #contact {
+        order: 3;           /* texto y form */
+        flex-direction: column;
+    }
 }
