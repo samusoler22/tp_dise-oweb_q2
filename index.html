@@ -1,0 +1,146 @@
+<!--COSAS POR HACER
+1 - Modificar el Form para que el mensaje de error se agregue encima de los inputs como Columna, no como Row
+2 - Darle Estilo al Footer
+3 - Agregar LocalStorage
+4 - Agregar boton Interactivo "Make It Pink" que modifique el css y cambie los colores de la pagina a rosa-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP</title>
+    <!--Google Fonts Links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header class="flex-row">
+        <img src="logo.png" alt="S & D Company Logo">
+    </header>
+    <nav>
+        <ul class="flex-row">
+            <li><a class="nav_links" href="#">HOME</a></li>
+            <li><a class="nav_links" href="#shop-anchor">SHOP</a></li>
+            <li><a class="nav_links" href="#video">BRAND</a></li>
+            <li><a class="nav_links" href="#contact">CONTACT</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="banner flex-column">
+            <h1 id="title">THE ART OF ELEGANCE</h1>
+            <p id="subtitle">Unveiling exclusive collection</p>
+            <button id="discover-now">DISCOVER NOW</button>
+            <script>
+                document.getElementById('discover-now').addEventListener('click', function() {
+                location.href = 'discovery.html'; // Redirige a la pagina de productos
+                });
+            </script>
+        </div>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <a id="women-item" class="carousel-item" data-category="Mujer" href="#shop"   >
+                        Women
+                    </a>
+                    <a id="men-item" class="carousel-item" data-category="Hombre" href="#shop">
+                        Men
+                    </a>
+                    <a id="kids-item" class="carousel-item" data-category="Niños" href="#shop">
+                        Kids
+                    </a>
+                    <a id="jewelry-item" class="carousel-item" data-category="Joyas" href="#shop">
+                        Jewelry
+                    </a>
+                    <a id="sales-item" class="carousel-item" data-category="Promociones" href="#shop">
+                        Sales
+                    </a>
+                </div>
+            </div>
+            <div class="flex-row">
+                <button class="nav-arrow previous">❮</button>
+                <button class="nav-arrow next">❯</button>
+            </div>  
+        </div>
+
+        <!-- Este id shop-anchor se usa solo para que el menu de navegacion 
+        nos traiga hasta la seccion de tienda pero visualmente nos deje bien ubicados
+        porque el elemento con id shop esta mas abajo-->
+        <div id="shop-anchor" class="flex-column sections_container">
+            <section id="shop">
+                <h2>Women</h2>
+                <div class="clothes-container">
+                    #Aca creamos los elementos de cada pieza de ropa
+                </div>
+            </section>
+            <section id="video" class="flex-row">
+                <video class="splited_section" src="src/brand_video.mp4" loop autoplay muted></video>
+                <aside class="flex-column splited_section splited_section_text">
+                    <h3 class="section_title">Reserve</h3>
+                    <p>
+                        En Reserve, no perseguimos tendencias, <strong>cultivamos un legado</strong>. Cada pieza es una declaración de <strong>calma, precisión y belleza duradera</strong>, creada con los tejidos más nobles para acompañar tu espíritu con una elegancia <strong>sutil</strong>.
+                    </p>
+                </aside>
+            </section>
+            
+            <section id="contact" class="flex-row">
+                <aside class="flex-column splited_section splited_section_text">
+                    <h3 class="section_title">Contact</h3>
+                    <p>
+                        La <strong>calma</strong> y la <strong>precisión</strong> definen cada creación de Reserve. Si deseas explorar colecciones exclusivas, solicitar atención personalizada o tienes consultas sobre el <strong>legado</strong> y los tejidos nobles de nuestras prendas, escríbenos. Estamos a tu disposición para una comunicación tan <strong>sutil y elegante</strong> como nuestra moda.
+                    </p>
+                </aside>
+                <div class="splited_section">
+                    <form class="flex-row">
+                        <div class="flex-column special_gap">
+                            <!--Eliminé los input required para que salten las validaciones por JS-->
+                            <input placeholder="Nombre" id="nombre" name="nombre">
+                            <input placeholder="Email" type="email" id="email" name="email">
+                        </div>
+                        <div class="flex-column">
+                            <textarea placeholder="Mensaje" id="mensaje" name="mensaje" rows="4"></textarea>
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </main>
+        <footer class="lp-footer">
+
+  <div class="lp-top-line"></div>
+
+  <div class="lp-container">
+
+    <div class="lp-left">
+      <span class="lp-icon">🌐</span>
+      <span>INTL (English)</span>
+    </div>
+
+    <div class="lp-center">
+      <img src="logo.png" alt="Reveur Logo" class="lp-logo">
+      <h2>Reveur</h2>
+      <p>Reveur Boutique 2025</p>
+    </div>
+
+    <div class="lp-right">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
+    </div>
+
+  </div>
+
+</footer>
+
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
+
