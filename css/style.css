@@ -523,10 +523,10 @@ button:hover {
   cursor: pointer;
 }
 
-/* media query*/
+/* como se ve dispositivos */
 @media (max-width: 768px) {
 
-    /* Secciones divididas en dos*/
+    /* Secciones divididas  */
     #video,
     #contact {
         flex-direction: column;
@@ -539,7 +539,7 @@ button:hover {
         height: auto;
     }
 
-    /* Banner mas chico */
+    /* Banner */
     .banner {
         height: 40vh;
         padding: 20px;
@@ -554,7 +554,7 @@ button:hover {
         font-size: 18px;
     }
 
-    /* Form columna obligatoria */
+    /* Formulario */
     form {
         flex-direction: column;
         height: auto;
@@ -570,13 +570,13 @@ button:hover {
         width: 100%;
     }
 
-    /* ropa mas grande en celular */
+    /* Productos (ropa) */
     .cloth {
         width: 45%;
         height: auto;
     }
 
-    /* Footer en columna */
+    /* Footer */
     .lp-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -590,5 +590,25 @@ button:hover {
 
     .lp-left {
         justify-content: center;
+    }
+
+    /* orden de secciones */
+    .sections_container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    #shop {
+        order: 1;
+    }
+
+    #video {
+        order: 2;           /* video  y texto */
+        flex-direction: column;
+    }
+
+    #contact {
+        order: 3;           /* texto y form */
+        flex-direction: column;
     }
 }
