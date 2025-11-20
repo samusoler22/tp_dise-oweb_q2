@@ -209,6 +209,11 @@ nav ul{
     justify-content: center;
     margin-bottom: 1%;
     background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cloth:hover{
+    transform: scale(1.1);
 }
 
 .cloth figure{
@@ -233,6 +238,15 @@ nav ul{
 .cloth p{
     font-size: 12px;
     margin: 1%;
+}
+
+.sales{
+    background-color: #ff7300;
+    color: white;
+}
+
+.saletag{
+    color:red;
 }
 
 #shop{

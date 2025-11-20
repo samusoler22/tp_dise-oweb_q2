@@ -19,6 +19,13 @@ async function createClothes(gender){
             <h3>${cloth.NAME}</h3>
             <p>AR$: ${cloth.PRICE}</p>
         `;
+        if (cloth.GENRE === "Sales"){
+          clothElement.classList.add('sales');
+          let saleTag = document.createElement('p');
+          saleTag.textContent = 'SALE -20%';
+          saleTag.classList.add('saletag')
+          clothElement.appendChild(saleTag);    
+        }
         clothesContainer.appendChild(clothElement);
     });
 }
