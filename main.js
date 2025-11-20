@@ -98,6 +98,15 @@ function errorElement(parentElement, message){
     parentElement.appendChild(errorElement);
 }
 
+
+form.addEventListener('click', (event) => {
+  const errorElements = document.querySelectorAll('#error');
+  errorElements.forEach(errorElement => {
+    errorElement.remove();
+  });
+});
+
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -115,51 +124,11 @@ form.addEventListener('submit', (event) => {
     return;
   }
 
-  if (!emailValue.includes('@') || !emailValue.includes('.')) {
-    errorElement(form, 'Por favor ingresa un correo electrónico válido');
-    return;
-  }
-
   if (messageValue === '') {
     errorElement(form, 'Por favor ingresa un mensaje');
     return;
   }
 
-  alert('Formulario enviado con exito!');
+  alert('FORMULARIO ENVIADO CON EXITO!');
   form.reset();
 });
-
-
-
-document.getElementById('makePink').addEventListener('click', function() {
-  // Fondo de toda la pagina
-  document.body.style.backgroundColor = "#ffe0f0"; 
-  document.body.style.color = "#800080"; 
-
-  // Productos
-  document.querySelectorAll('.producto').forEach(prod => {
-    prod.style.backgroundColor = "#ffb6c1"; 
-  });
-
-  // Botones dentro de los productos
-  document.querySelectorAll('.producto button').forEach(btn => {
-    btn.style.backgroundColor = "#ff69b4"; // rosa fuerte
-    btn.style.color = "white";
-  });
-
-  // Footer
-  const footer = document.querySelector('.footer');
-  if(footer) {
-    footer.style.backgroundColor = "#ff69b4";
-    footer.style.color = "white";
-  }
-
-  // Cambiar el mismo boton a rosa intenso
-  const btnPink = document.getElementById('makePink');
-  btnPink.style.backgroundColor = "#ff1493";
-  btnPink.style.color = "white";
-});
-
-/// llevar al otro html
-
-
