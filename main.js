@@ -1,3 +1,4 @@
+/*Funcion para hacer fetch de la data de la API*/
 async function ClothesByGender(gender){
     let clothesData = await fetch(`https://eneqomi2sj.execute-api.us-east-2.amazonaws.com/Prod/products/gender/${gender}`)
     clothes = await clothesData.json();
@@ -5,6 +6,8 @@ async function ClothesByGender(gender){
     return clothes;
 }
 
+/*Funcion para crear las tarjetas de cada ropa que esta en la API
+y añadir los elementos al DOM*/
 async function createClothes(gender){ 
     clothesContainer.innerHTML = "";
     let clothes = await ClothesByGender(gender); 
@@ -19,6 +22,7 @@ async function createClothes(gender){
             <h3>${cloth.NAME}</h3>
             <p>AR$: ${cloth.PRICE}</p>
         `;
+        /*Aca agregamos elementos extra si el elemento es uno de la seccion de descuentos*/
         if (cloth.GENRE === "Sales"){
           clothElement.classList.add('sales');
           let saleTag = document.createElement('p');
@@ -30,7 +34,7 @@ async function createClothes(gender){
     });
 }
 
-
+/*Funcion para mover el carousel a la posicion deseada*/
 function updateCarousel(arrow) {
     if (arrow === 'next') {
         offset += 16.6;
@@ -45,12 +49,12 @@ function updateCarousel(arrow) {
 }
 
 
-
+/*Aca cargarmos como primer elemento siempre la ropa de mujeres, asi la seccion no queda vacia*/
 window.addEventListener('DOMContentLoaded', () => {
     createClothes('Mujer');
 });
 
-//Carousel
+/*Creacion de logica del Carousel*/
 const track = document.querySelector('.carousel-track');
 const nextButton = document.querySelector('.next');
 const prevButton = document.querySelector('.previous');
@@ -60,6 +64,7 @@ let currentIndex = 0;
 let offset = 0;
 const maxIndex = totalItems - itemsVisible;
 
+/*Funcionamineto de los botones para mover el carousel*/
 nextButton.addEventListener('click', () => {
     if (currentIndex < maxIndex) {
         currentIndex++;
@@ -74,6 +79,8 @@ prevButton.addEventListener('click', () => {
     }
 });
 
+/*Cuando se haga click en los elementos del carousel que son las categorias
+que cargue los elementos correspondientes*/
 let carouselItems = document.querySelectorAll('.carousel-item');
 let clothesContainer = document.getElementsByClassName("clothes-container")[0];
 let clothesTitle = document.getElementById("shop").firstElementChild;
@@ -91,6 +98,7 @@ let nameInput = document.getElementById('nombre');
 let emailInput = document.getElementById('email');
 let messageInput = document.getElementById('mensaje');
 
+/*Funcion para crear el elemento que muestra error*/
 function errorElement(parentElement, message){
     let errorElement = document.createElement('p');
     errorElement.id = 'error';
@@ -98,7 +106,7 @@ function errorElement(parentElement, message){
     parentElement.appendChild(errorElement);
 }
 
-
+/*Aca eliminamos los elementos de error para que no se acumulen*/
 form.addEventListener('click', (event) => {
   const errorElements = document.querySelectorAll('#error');
   errorElements.forEach(errorElement => {
@@ -106,7 +114,7 @@ form.addEventListener('click', (event) => {
   });
 });
 
-
+/*Aca validamos los inputs para que no se envien vacios */
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -133,7 +141,8 @@ form.addEventListener('submit', (event) => {
   form.reset();
 });
 
-
+/*Aca creamos un local storage para los elementos de los inputs de contacto para que no se tenga que
+volver a escribir si no se envio el formulario*/
 nameInput.addEventListener('input', () => {
   localStorage.setItem('name', nameInput.value);
 });
@@ -152,21 +161,22 @@ form.addEventListener('submit', () => {
   localStorage.removeItem('message');
 });
 
+/*Aca cargamos los datos del local storage en caso de que existan*/
 window.addEventListener('DOMContentLoaded', () => {
   nameInput.value = localStorage.getItem('name') || '';
   emailInput.value = localStorage.getItem('email') || '';
   messageInput.value = localStorage.getItem('message') || '';
 });
 
-// Make it pink button: toggle pink-mode on body
+/*Logica del boton make it pink, para cambiar los colores a rosa*/
 document.addEventListener('DOMContentLoaded', () => {
   const pinkButtons = document.querySelectorAll('.pink-btn');
   if (!pinkButtons || pinkButtons.length === 0) return;
 
+  /*Funcion para cambiar el boton dependiendo de cual esta seleccionado*/
   function togglePink(btn) {
     document.body.classList.toggle('pink-mode');
     const isPink = document.body.classList.contains('pink-mode');
-    // Update all buttons' text and aria state
     pinkButtons.forEach(b => {
       b.textContent = isPink ? 'Make it normal' : 'Make it pink';
       b.setAttribute('aria-pressed', isPink);

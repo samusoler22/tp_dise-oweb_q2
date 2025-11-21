@@ -390,11 +390,12 @@ footer p{
 }
 
 .lp-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50px;
-    margin: 0 auto 5px; /* centrar horizontalmente */
-    opacity: 1; /* asegurar que es visible (0..1) */
-    display: block;
-    max-width: 100%;
+    margin: 0 auto 5px;
+    opacity: 1;
     width: auto;
 }
 
@@ -445,6 +446,9 @@ footer p{
 
 /* Botón Make it pink */
 .pink-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     color: #000;
     border: 2px solid #000;
@@ -453,36 +457,29 @@ footer p{
     cursor: pointer;
     font-weight: 700;
     margin: 8px auto 0;
-    display: inline-block;
 }
 
 .pink-btn:hover {
     background: #fff1f8;
 }
 
-/* Modo rosa: forzar fondo/texto en elementos para que la página se vea rosa */
 body.pink-mode, body.pink-mode main, body.pink-mode header, body.pink-mode nav, body.pink-mode section, body.pink-mode footer {
-    background-color: #fff0f6 !important; /* más suave */
+    background-color: #fff0f6 !important;
     color: #000 !important;
 }
 
-/* Forzar bordes/links legibles: nav links deben ser blancas en modo rosa */
 body.pink-mode a, body.pink-mode .lp-right a {
     color: #000 !important;
 }
 
-/* Enlaces de navegación principales (HOME / SHOP / BRAND / CONTACT) en blanco para contraste */
 body.pink-mode .nav_links {
     color: #fff !important;
 }
 
-/* Evitar que las imágenes cambien de color de fondo */
 body.pink-mode img {
     background-color: transparent !important;
 }
 
-/* Reemplazar tonos naranjas por rosas dentro del modo rosa */
-/* Navegación en modo rosa: fondo rosa suave y enlaces en blanco */
 body.pink-mode nav {
     background-color: #ffd7e9 !important; /* nav más rosado */
     border-bottom-color: rgba(0,0,0,0.03) !important;
@@ -492,13 +489,11 @@ body.pink-mode nav ul {
     background: transparent !important;
 }
 
-/* Banner: más oscuro en modo rosa para destacar el título */
 body.pink-mode .banner {
     background: linear-gradient(135deg, #ff7aa3 0%, #d86b97 100%) !important;
     color: #fff !important;
 }
 
-/* Forzar título/subtítulo en blanco dentro del banner para contraste */
 body.pink-mode .banner #title,
 body.pink-mode .banner #subtitle {
     color: #ffffff !important;
@@ -511,7 +506,7 @@ body.pink-mode .nav-arrow {
 }
 
 body.pink-mode .sales {
-    background-color: #ffd0e6 !important; /* badge rosa suave */
+    background-color: #ffd0e6 !important;
     color: #000 !important;
 }
 
@@ -534,7 +529,6 @@ body.pink-mode .producto {
     background-color: #fff8fb !important;
 }
 
-/* Top line and accents */
 body.pink-mode .lp-top-line {
     background-color: #ffd7e9 !important;
 }
@@ -544,8 +538,8 @@ body.pink-mode .lp-right a {
     color: #000 !important;
 }
 
-/* Asegurar legibilidad: forzar texto oscuro en la mayoría de elementos en modo rosa
-     (dejamos `.nav_links` en blanco tal como se pidió antes) */
+/* Aca tuvimos que forzar los colores de esta forma porque no queriamos modificar todos los elementos
+pero si la mayoria*/
 body.pink-mode,
 body.pink-mode main,
 body.pink-mode header,
@@ -570,12 +564,10 @@ body.pink-mode .pink-btn {
     color: #111 !important;
 }
 
-/* Mantener enlaces de navegación en blanco para contraste con el fondo rosa */
 body.pink-mode .nav_links {
     color: #fff !important;
 }
 
-/* Asegurar que la sección de contacto también se vuelva rosa */
 body.pink-mode #contact {
     background: linear-gradient(135deg, #fff6fb 0%, #fff0f6 100%) !important;
     color: #000 !important;
@@ -597,7 +589,6 @@ body.pink-mode #contact .section_title {
     border-color: rgba(0,0,0,0.05) !important;
 }
 
-/* Cambiar el fondo detrás de las fotos/productos a rosa suave */
 body.pink-mode .cloth,
 body.pink-mode .cloth figure,
 body.pink-mode .producto,
@@ -605,25 +596,13 @@ body.pink-mode .producto img {
     background-color: #fff6fb !important;
 }
 
-/* Asegurar que las figuras no muestren bordes blancos fuertes */
 body.pink-mode .cloth figure img {
     background-color: transparent !important;
 }
 
-/* Centrar control rosa encima de la sección de ropa */
 .pink-control {
     text-align: center;
     margin: 18px 0;
-}
-
-
-.producto {
-  border: 1px solid #eee;
-  padding: 15px;
-  width: 200px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-family: "Georgia", serif;
 }
 
 button {
@@ -641,100 +620,7 @@ button:hover {
   background: #000000;
 }
 
-#carrito {
-  margin-top: 20px;
-  font-family: "Georgia", serif;
-}
-
-.item-carrito {
-  display: flex;
-  justify-content: space-between;
-  width: 250px;
-  margin-bottom: 10px;
-}
-
-.btn-vaciar {
-  background: black;
-  margin-top: 20px;
-}
-
-/* Contenedor de productos */
-.producto {
-  display: flex;             
-  align-items: center;      
-  justify-content: space-between;
-  background-color: #fff3e0; 
-  padding: 20px;
-  margin: 10px 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  width: 100%;            
-}
-
-
-.producto img {
-  width: 150px;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s; 
-}
-
-
-.producto img:hover {
-  transform: translateY(-10px); 
-}
-
-.producto h3, .producto .precio {
-  margin: 0;
-}
-
-/* Boton */
-.producto button {
-  padding: 10px 20px;
-  background-color: #FFA500; 
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.producto button:hover {
-  background-color: #ff8c00; 
-}
-
-/* Carrito */
-#carrito {
-  background-color: #fff3e0;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  width: 100%;
-}
-
-
-#total {
-  font-weight: bold;
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-/*vaciar carrito */
-.btn-vaciar {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #c66012; 
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* como se ve dispositivos */
 @media (max-width: 768px) {
-
-    /* Secciones divididas  */
     #video,
     #contact {
         flex-direction: column;
@@ -747,7 +633,6 @@ button:hover {
         height: auto;
     }
 
-    /* Banner */
     .banner {
         height: 40vh;
         padding: 20px;
@@ -762,7 +647,6 @@ button:hover {
         font-size: 18px;
     }
 
-    /* Formulario */
     form {
         flex-direction: column;
         height: auto;
@@ -811,12 +695,12 @@ button:hover {
     }
 
     #video {
-        order: 2;           /* video  y texto */
+        order: 2;       
         flex-direction: column;
     }
 
     #contact {
-        order: 3;           /* texto y form */
+        order: 3;    
         flex-direction: column;
     }
 }
