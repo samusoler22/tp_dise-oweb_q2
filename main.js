@@ -157,3 +157,23 @@ window.addEventListener('DOMContentLoaded', () => {
   emailInput.value = localStorage.getItem('email') || '';
   messageInput.value = localStorage.getItem('message') || '';
 });
+
+// Make it pink button: toggle pink-mode on body
+document.addEventListener('DOMContentLoaded', () => {
+  const pinkButtons = document.querySelectorAll('.pink-btn');
+  if (!pinkButtons || pinkButtons.length === 0) return;
+
+  function togglePink(btn) {
+    document.body.classList.toggle('pink-mode');
+    const isPink = document.body.classList.contains('pink-mode');
+    // Update all buttons' text and aria state
+    pinkButtons.forEach(b => {
+      b.textContent = isPink ? 'Make it normal' : 'Make it pink';
+      b.setAttribute('aria-pressed', isPink);
+    });
+  }
+
+  pinkButtons.forEach(btn => {
+    btn.addEventListener('click', () => togglePink(btn));
+  });
+});
