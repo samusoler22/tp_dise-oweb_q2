@@ -457,22 +457,156 @@ footer p{
 }
 
 .pink-btn:hover {
-    background: #ffd1e6;
+    background: #fff1f8;
 }
 
 /* Modo rosa: forzar fondo/texto en elementos para que la página se vea rosa */
 body.pink-mode, body.pink-mode main, body.pink-mode header, body.pink-mode nav, body.pink-mode section, body.pink-mode footer {
-    background-color: #ffd1e6 !important;
+    background-color: #fff0f6 !important; /* más suave */
     color: #000 !important;
 }
 
-/* Forzar bordes/links legibles */
-body.pink-mode a, body.pink-mode .nav_links, body.pink-mode .lp-right a {
+/* Forzar bordes/links legibles: nav links deben ser blancas en modo rosa */
+body.pink-mode a, body.pink-mode .lp-right a {
     color: #000 !important;
+}
+
+/* Enlaces de navegación principales (HOME / SHOP / BRAND / CONTACT) en blanco para contraste */
+body.pink-mode .nav_links {
+    color: #fff !important;
 }
 
 /* Evitar que las imágenes cambien de color de fondo */
 body.pink-mode img {
+    background-color: transparent !important;
+}
+
+/* Reemplazar tonos naranjas por rosas dentro del modo rosa */
+/* Navegación en modo rosa: fondo rosa suave y enlaces en blanco */
+body.pink-mode nav {
+    background-color: #ffd7e9 !important; /* nav más rosado */
+    border-bottom-color: rgba(0,0,0,0.03) !important;
+}
+
+body.pink-mode nav ul {
+    background: transparent !important;
+}
+
+/* Banner: más oscuro en modo rosa para destacar el título */
+body.pink-mode .banner {
+    background: linear-gradient(135deg, #ff7aa3 0%, #d86b97 100%) !important;
+    color: #fff !important;
+}
+
+/* Forzar título/subtítulo en blanco dentro del banner para contraste */
+body.pink-mode .banner #title,
+body.pink-mode .banner #subtitle {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.25) !important;
+}
+
+body.pink-mode .nav-arrow {
+    background: linear-gradient(135deg, #ffe6f3 0%, #ffdcee 100%) !important;
+    color: #000 !important;
+}
+
+body.pink-mode .sales {
+    background-color: #ffd0e6 !important; /* badge rosa suave */
+    color: #000 !important;
+}
+
+body.pink-mode form {
+    color: #000 !important;
+    background-color: #fffafc !important;
+}
+
+body.pink-mode form input, body.pink-mode form textarea {
+    border: solid 1px #f1a8c3 !important;
+    box-shadow: 0 0 5px rgba(241,168,195,0.2) !important;
+}
+
+body.pink-mode form button, body.pink-mode .producto button {
+    background-color: #ffc7dd !important;
+    color: #000 !important;
+}
+
+body.pink-mode .producto {
+    background-color: #fff8fb !important;
+}
+
+/* Top line and accents */
+body.pink-mode .lp-top-line {
+    background-color: #ffd7e9 !important;
+}
+
+/* Ensure links inside right column remain readable */
+body.pink-mode .lp-right a {
+    color: #000 !important;
+}
+
+/* Asegurar legibilidad: forzar texto oscuro en la mayoría de elementos en modo rosa
+     (dejamos `.nav_links` en blanco tal como se pidió antes) */
+body.pink-mode,
+body.pink-mode main,
+body.pink-mode header,
+body.pink-mode nav,
+body.pink-mode section,
+body.pink-mode footer,
+body.pink-mode p,
+body.pink-mode h1,
+body.pink-mode h2,
+body.pink-mode h3,
+body.pink-mode h4,
+body.pink-mode h5,
+body.pink-mode h6,
+body.pink-mode label,
+body.pink-mode .section_title,
+body.pink-mode .lp-center h2,
+body.pink-mode .cloth h3,
+body.pink-mode .producto h3,
+body.pink-mode .producto .precio,
+body.pink-mode form button,
+body.pink-mode .pink-btn {
+    color: #111 !important;
+}
+
+/* Mantener enlaces de navegación en blanco para contraste con el fondo rosa */
+body.pink-mode .nav_links {
+    color: #fff !important;
+}
+
+/* Asegurar que la sección de contacto también se vuelva rosa */
+body.pink-mode #contact {
+    background: linear-gradient(135deg, #fff6fb 0%, #fff0f6 100%) !important;
+    color: #000 !important;
+}
+
+body.pink-mode #contact .splited_section,
+body.pink-mode #contact .splited_section_text {
+    background-color: transparent !important;
+    color: #000 !important;
+}
+
+body.pink-mode #contact form {
+    background-color: #fffafc !important;
+    border: 1px solid #f1a8c3 !important;
+}
+
+body.pink-mode #contact .section_title {
+    color: #000 !important;
+    border-color: rgba(0,0,0,0.05) !important;
+}
+
+/* Cambiar el fondo detrás de las fotos/productos a rosa suave */
+body.pink-mode .cloth,
+body.pink-mode .cloth figure,
+body.pink-mode .producto,
+body.pink-mode .producto img {
+    background-color: #fff6fb !important;
+}
+
+/* Asegurar que las figuras no muestren bordes blancos fuertes */
+body.pink-mode .cloth figure img {
     background-color: transparent !important;
 }
 
